@@ -25,9 +25,6 @@ button.addEventListener('click', ev => {
 
     fetch(request).then(data =>{
         console.log(data);
-        inputLocation.disabled = true;
-        inputEmails.disabled = true;
-        button.disabled = true;
         errorAlert.hidden = !false;
         successAlert.hidden = false;
     }).catch(err => {
