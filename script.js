@@ -3,11 +3,12 @@ const headers = new Headers({
 });
 const endpoint = "https://ec2-54-205-28-204.compute-1.amazonaws.com/api/v1/webhooks/stackstorm-demo/test-action?st2-api-key=MGM3MTkyMDZjYmJhMGY3ZjYzYTZmOTFjZmM5YzcyODVjZDM3Nzc0ZTIzYTRlNDhjOTk5MGIxN2YyODA4YzhiYg";
 
-
 const button = document.querySelector('button');
-const input = document.querySelector('input');
+const inputLocation = document.querySelector('input[name="location"]');
+const inputEmails = document.querySelector('input[name="emails"]');
 const successAlert = document.querySelector('.success');
 const errorAlert = document.querySelector('.error');
+
 button.addEventListener('click', ev => {
     const options = {
         "method": "POST",
@@ -15,7 +16,8 @@ button.addEventListener('click', ev => {
         "body": JSON.stringify({
             "alertId": Math.round(1000 +(Math.random()*(3000-1000))),
             "details":{
-                "location": input.value
+                "location": inputLocation.value,
+                "emails": inputEmails.value.split(',')
             }
         })
     };
@@ -23,7 +25,8 @@ button.addEventListener('click', ev => {
 
     fetch(request).then(data =>{
         console.log(data);
-        input.disabled = true;
+        inputLocation.disabled = true;
+        inputEmails.disabled = true;
         button.disabled = true;
         errorAlert.hidden = !false;
         successAlert.hidden = false;
