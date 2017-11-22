@@ -2,7 +2,7 @@ const cors = "https://can-cors.herokuapp.com/"
 const headers = new Headers({
     "Content-Type": "application/json"
 });
-const endpoint = "https://ec2-54-205-28-204.compute-1.amazonaws.com/api/v1/webhooks/stackstorm-demo/test-action?st2-api-key=MGM3MTkyMDZjYmJhMGY3ZjYzYTZmOTFjZmM5YzcyODVjZDM3Nzc0ZTIzYTRlNDhjOTk5MGIxN2YyODA4YzhiYg";
+const endpoint = "https://ec2-54-205-28-204.compute-1.amazonaws.com/api/v1/webhooks/stackstorm-demo/test-action";
 
 const options = {
     "method": "POST",
