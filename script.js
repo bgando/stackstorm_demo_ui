@@ -17,7 +17,7 @@ button.addEventListener('click', ev => {
             "alertId": Math.round(1000 +(Math.random()*(3000-1000))),
             "details":{
                 "location": inputLocation.value,
-                "emails": inputEmails.value
+                "emails": inputEmails.value.split(',')
             }
         })
     };
